@@ -1,6 +1,40 @@
-<?php 
+<?php
+
+$form = !empty($_POST["nome"]) && !empty($_POST["telemovel"]) && !empty($_POST["email"]) && !empty($_POST["mensagem"]);
+if($form){
 
 
+  $g_recaptcha_response = $_POST["g-recaptcha-response"];
+  $secret_key = "6LeuwM4rAAAAAMoIbH5bfwECVKiJzHDY5_m57TLz";
+  $resposta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret_key&response=$g_recaptcha_response");
+  $google = json_decode($resposta);
+
+  if($google->success){
+
+    $nome = $_POST["nome"];
+    $telemovel = $_POST["telemovel"];
+    $email = $_POST["email"];
+    $mensagem = $_POST["mensagem"];
+
+    $mensagem_final = "
+      - Nome: $nome
+      - Telemovel: $telemovel
+      - E-mail: $email
+      - Mensagem: $mensagem
+    ";
+
+    if(!empty($_POST["copia"])){
+      mail($contactos["email_form"].",".$email, "Contactos do site casas e propriedades", $mensagem_final);
+    }
+    else{
+      mail($contactos["email_form"], "Contactos do site casas e propriedades", $mensagem_final);
+    }
+
+
+  }
+
+  // header("contactos.php");
+}
 
 ?>
 
@@ -44,7 +78,7 @@
 
     <div class="row mt-5">
       <div class="col-12 contactos">
-        <form action="">
+        <form action="" method="post">
           <input type="text" name="nome" placeholder="*Nome" autofocus>
           <br>
           <input type="number" name="telemovel" placeholder="*Telemóvel" autofocus>
@@ -53,9 +87,9 @@
           <br>
           <textarea name="mensagem" id="" placeholder="*Mensagem"></textarea>
           <h6>*Campos de Preenchimento Obrigatório</h6>
-          <input type="checkbox">
-          <label for="" id="checkbox">Desejo receber uma cópia desta mensagem no meu e-mail</label>
-          <div class="g-recaptcha d-flex justify-content-end pe-5 me-5" data-sitekey="6LenDo8rAAAAAIT1HJRUg411wvXWA3vMSLPdZ1gS"></div>
+          <input type="checkbox" name="copia">
+          <label for="" id="checkbox" >Desejo receber uma cópia desta mensagem no meu e-mail</label>
+          <div class="g-recaptcha d-flex justify-content-end pe-5 me-5" data-sitekey="6LeuwM4rAAAAAAEpxNHULdCfXww99ZqskrR_SwmH"></div>
           
 
           <br><br>

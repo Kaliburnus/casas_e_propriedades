@@ -3,8 +3,9 @@
 require_once "required.php";
 
 $contactos = getContactos();
-$projectos_dropdown = getProjectosDropdown();
-
+$projectos_dropdown = getProjectosDropdown(); 
+$carousel = getCarousel();
+$empresa_dropdown = getEmpresaDropdown();
 ?>
 
 
@@ -70,10 +71,13 @@ $projectos_dropdown = getProjectosDropdown();
                       EMPRESA
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="historial.php">HISTORIAL</a></li>
+                    <?php foreach($empresa_dropdown as $e): ?>
+
+                      <li><a class="dropdown-item" href="empresa.php?id=<?= $e["id"] ?>"><?= $e["titulo"] ?></a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="filo_valor.php">FILOSOFIA E VALORES</a></li>
-                    </ul>
+
+                    <?php endforeach ?>
+                  </ul>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link <?= ($current_menu == "projecto") ? "active" : "" ?> dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -139,9 +143,12 @@ $projectos_dropdown = getProjectosDropdown();
                     EMPRESA
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="historial.php">HISTORIAL</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="filo_valor.php">FILOSOFIA E VALORES</a></li>
+                    <?php foreach($empresa_dropdown as $i => $e): ?>
+
+                      <li><a class="dropdown-item" href="empresa.php?id=<?= $e["id"] ?>"><?= $e["titulo"] ?></a></li>
+                      <?= ($i == 0) ? "<li><hr class='dropdown-divider'></li>" : "" ?>
+
+                    <?php endforeach ?>
                   </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -150,10 +157,10 @@ $projectos_dropdown = getProjectosDropdown();
                   </a>
                   <ul class="dropdown-menu">
 
-                    <?php foreach($projectos_dropdown as $p): ?>
+                    <?php foreach($projectos_dropdown as $i => $p): ?>
 
                       <li><a class="dropdown-item" href="projecto.php?id=<?= $p["id"] ?>"><?= $p["nome"] ?></a></li>
-
+                      <?= ($i == 0) ? "<li><hr class='dropdown-divider'></li>" : "" ?>
 
                     <?php endforeach ?>
 
@@ -193,51 +200,21 @@ $projectos_dropdown = getProjectosDropdown();
                                                                 
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="public/uploads/caroussel/cabecalho1.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-flex justify-content-end header-image-caption">
-                <div>
-                  <h1><span>Casas &</span> Propriedades</h1>
-                  <h4>Experiência - Profissionalismo</h4>
+
+            <?php foreach($carousel as $i => $c): ?>
+
+              <div class="carousel-item carousel-item <?= ($i == 0) ? "active" : "" ?>">
+                <img src="<?= $c["imagem"] ?>" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-flex justify-content-end header-image-caption">
+                  <div>
+                    <h1><?= $c["titulo"] ?></h1>
+                    <div class="red-separator"></div>
+                    <h4><?= $c["texto"] ?></h4>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="carousel-item">
-              <img src="public/uploads/caroussel/cabecalho2.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-flex justify-content-end header-image-caption">
-                <div>
-                  <h1><span>Casas &</span> Propriedades</h1>
-                  <h4>Sustentabilidade - Qualidade de Vida</h4>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="public/uploads/caroussel/cabecalho3.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-flex justify-content-end header-image-caption">
-                <div>
-                  <h1><span>Casas &</span> Propriedades</h1>
-                  <h4>Experiência - Qualidade de construção</h4>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="public/uploads/caroussel/cabecalho4.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-flex justify-content-end header-image-caption">
-                <div>
-                  <h1><span>Casas &</span> Propriedades</h1>
-                  <h4>Engenharia - Arquitetura</h4>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="public/uploads/caroussel/cabecalho5.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-flex justify-content-end header-image-caption">
-                <div>
-                  <h1><span>Casas &</span> Propriedades</h1>
-                  <h4>Design - Qualidade</h4>
-                </div>
-              </div>
-            </div>
+             
+            <?php endforeach?>
           </div>
         </div>
       </div>

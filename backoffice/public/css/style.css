@@ -1,0 +1,68 @@
+
+body{
+  margin: 0px auto;
+  min-width: 1297px;
+  background-color: black;
+  background-position: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+}
+
+a{
+  color: gray;
+  font-size: 18px;
+  transition-duration: 0.6s;
+}
+
+
+.box{
+  
+  background-color: white;
+  border: 2px solid black;
+  height: fit-content;
+  padding: 20px 0px;
+  opacity: .9;
+}
+nav a{text-decoration: none; color: inherit;}
+
+table, tr, td, th{
+  border: 2px solid gray;
+  border-collapse: collapse;
+  padding: 5px 10px;
+}
+table{width: 700px;}
+td{width: fit-content;}
+tr:hover{background-color: rgba(255, 0, 0, 0.73);}
+td:hover{background-color: rgba(79, 66, 255, 0.73);}
+
+input{text-align: center;}
+
+input[type="submit"], button{
+  background-color: maroon;
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: gray;
+  font-size: 18px;
+  margin: 10px 0px;
+  transition-duration: 0.6s;
+}
+
+input[type="submit"]:hover, button:hover, a:hover{
+  transform: scale(1.2);
+}
+
+option{
+  border-radius: 20px;
+  color: gray;
+  background-color: rgba(0, 0, 0, 0.691);
+}
+
+footer{
+  margin: 0px;
+  width: 100%;
+  background-color: gray;
+}
+textarea{
+  resize: both;
+  padding: 20px
+}

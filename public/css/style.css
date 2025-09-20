@@ -25,6 +25,8 @@ body{
   height: 3px;
 }
 
+
+
 header #logotipo{
   max-width: 280px;
   margin: 15px 0px 25px 0px;
@@ -567,6 +569,7 @@ input[type=checkbox]{
 
   .carousel-indicators-buttons{
     width: 100%;
+    position: static;
   }
 
 
