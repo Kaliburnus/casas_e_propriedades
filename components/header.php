@@ -2,10 +2,11 @@
 
 require_once "required.php";
 
-$contactos = getContactos();
-$projectos_dropdown = getProjectosDropdown(); 
-$carousel = getCarousel();
-$empresa_dropdown = getEmpresaDropdown();
+  $contactos = getContactos();
+  $projectos_dropdown = getProjectosDropdown(); 
+  $carousel = getCarousel();
+  $empresa_dropdown = getEmpresaDropdown();
+  $portfolio = getPortfolioDropdown();
 ?>
 
 
@@ -85,9 +86,9 @@ $empresa_dropdown = getEmpresaDropdown();
                     </a>
                   <ul class="dropdown-menu">
 
-                    <?php foreach($projectos_dropdown as $p): ?>
+                    <?php foreach($projectos_dropdown as $pro): ?>
 
-                      <li><a class="dropdown-item" href="projecto.php?id=<?= $p["id"] ?>"><?= $p["nome"] ?></a></li>
+                      <li><a class="dropdown-item" href="projecto.php?id=<?= $pro["id"] ?>"><?= $pro["nome"] ?></a></li>
 
 
                     <?php endforeach ?>
@@ -99,15 +100,12 @@ $empresa_dropdown = getEmpresaDropdown();
                       PORTFÓLIO
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">VARANDAS LOREM - ALMADA</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">VILA IPSUM - SESSIMBRA</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">CAMPO DOLOR - BRAGA</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">ESTRADA SIT - LISBOA</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">RUA AMET - PORTO</a></li>
+                      <?php foreach($portfolio as $port): ?>
+
+                        <li><a class="dropdown-item" href="portfolio.php?id=<?= $port["id"] ?>"><?= $port["nome"] ?></a></li>
+                        <?= ($i < $port["id"]) ? "<li><hr class='dropdown-divider'></li>" : "" ?>
+
+                      <?php endforeach ?>
                     </ul>
                   </li>
                   <li class="nav-item">
@@ -146,7 +144,7 @@ $empresa_dropdown = getEmpresaDropdown();
                     <?php foreach($empresa_dropdown as $i => $e): ?>
 
                       <li><a class="dropdown-item" href="empresa.php?id=<?= $e["id"] ?>"><?= $e["titulo"] ?></a></li>
-                      <?= ($i == 0) ? "<li><hr class='dropdown-divider'></li>" : "" ?>
+                      <li><hr class='dropdown-divider'></li>
 
                     <?php endforeach ?>
                   </ul>
@@ -160,7 +158,7 @@ $empresa_dropdown = getEmpresaDropdown();
                     <?php foreach($projectos_dropdown as $i => $p): ?>
 
                       <li><a class="dropdown-item" href="projecto.php?id=<?= $p["id"] ?>"><?= $p["nome"] ?></a></li>
-                      <?= ($i == 0) ? "<li><hr class='dropdown-divider'></li>" : "" ?>
+                      <li><hr class='dropdown-divider'></li>
 
                     <?php endforeach ?>
 
@@ -171,15 +169,12 @@ $empresa_dropdown = getEmpresaDropdown();
                     PORTFÓLIO
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="portfolio.php">VARANDAS LOREM - ALMADA</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="portfolio.php">VILA IPSUM - SESSIMBRA</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="portfolio.php">CAMPO DOLOR - BRAGA</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="portfolio.php">ESTRADA SIT - LISBOA</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="portfolio.php">RUA AMET - PORTO</a></li>
+                      <?php foreach($portfolio as $port): ?>
+
+                        <li><a class="dropdown-item" href="portfolio.php?id=<?= $port["id"] ?>"><?= $port["nome"] ?></a></li>
+                        <li><hr class='dropdown-divider'></li>
+
+                      <?php endforeach ?>
                   </ul>
                 </li>
                 <li class="nav-item">
@@ -208,7 +203,8 @@ $empresa_dropdown = getEmpresaDropdown();
                 <div class="carousel-caption d-flex justify-content-end header-image-caption">
                   <div>
                     <h1><?= $c["titulo"] ?></h1>
-                    <div class="red-separator"></div>
+                    <div class="red-separator-c"></div>
+                    <br>
                     <h4><?= $c["texto"] ?></h4>
                   </div>
                 </div>

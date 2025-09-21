@@ -10,6 +10,7 @@ $usuario = $_SESSION["usuario"];
 $usuario = verificarLogado();
 
 
+$projectos_dropdown = getProjectosDropdown(); 
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +30,10 @@ $usuario = verificarLogado();
 
   <link rel="stylesheet" href="public/css/style.css">
 
+  
+  <!-- TINYMCE -->
+  <script src="../public/js/tinymce/tinymce.min.js" defer></script>
+  <script src="../public/js/difere.js" defer></script>
 
   <!-- JAVASCRIPT -->
   <script src="../public/js/functions.js" defer></script>
@@ -80,10 +85,14 @@ $usuario = verificarLogado();
                     PROJECTOS
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                    <?php foreach($projectos_dropdown as $p): ?>
+
+                      <li><a class="dropdown-item" href="projecto.php?id=<?= $p["id"] ?>"><?= $p["nome"] ?></a></li>
+
+
+                    <?php endforeach ?>
+
                   </ul>
                 </li>
                 <li class="nav-item">
@@ -94,17 +103,16 @@ $usuario = verificarLogado();
                     CONFIGURAÇÕES
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="contactos.php">Contactos</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item" href="#">Alterar palavra-passe</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-disabled="true">GESTOR DE FICHEIROS</a>
+                  <a class="nav-link" href="http://localhost/casas_e_propriedades/public/filemanager/dialog.php" target="_blank">GESTOR DE FICHEIROS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-disabled="true">LOGOUT</a>
+                  <a class="nav-link" href="logout.php">LOGOUT</a>
                 </li>
               </ul>
 

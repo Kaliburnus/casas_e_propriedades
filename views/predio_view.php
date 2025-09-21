@@ -104,7 +104,7 @@ if($form){
         <a href="acabamentos.php?id=<?= $pai["id"] ?>">
           <div id="acabamentos"></div>
         </a>
-        <a href="plantas.php">
+        <a href="plantas.php?id=<?= $pai["id"] ?>">
           <div id="plantas"></div>
         </a>
       </div>

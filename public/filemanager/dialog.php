@@ -1288,7 +1288,7 @@ $files = $sorted;
                 cssMaxHeight: 800,  // Component default value: 800
                 selectionStyle: {
                     cornerSize: 20,
-                    rotxatingPointOffset: 70
+                    rotatingPointOffset: 70
                 }
             });
             //cache loaded image

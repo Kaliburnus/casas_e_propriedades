@@ -18,13 +18,13 @@ function abrirPopupGestor(id){
   window.open(
     `http://localhost/casas_e_propriedades/public/filemanager/dialog.php?field_id=${id}&popup=1`,
     "Gestor de Ficheiros",
-    "width=700,height=500"
+    "width=850,height=600"
   );
 }
 
-function abrirPopupCarouselNew(){
+function abrirPopup(directory){
     window.open(
-    `http://localhost/casas_e_propriedades/backoffice/cab_new.php`,
+    `http://localhost/casas_e_propriedades/backoffice/${directory}`,
     "Caroussel",
     "width=850,height=600"
   );
@@ -47,13 +47,14 @@ function operacaoConcluida(){
   alert("Operação Concluida!");
   setTimeout(fecharPopup,1000);
 }
-
-function operacaoConcluida(){
-  alert("Operação Concluida!");
-  setTimeout(fecharPopup,1000);
+function confirmacao(directory,id){
+  if(confirm("Esta operação é irreversivel tem acerteza que deseja continuar?")){
+    window.location.href = directory+id;
+  }
+  else{
+    "";
+  }
 }
-
-
 
 
 

@@ -20,7 +20,7 @@ require_once "requirements.php";
 <body>
 
   <div class="box w-75 m-auto mt-5 text-center rounded-5">
-    <h1 class="text-success">SAIU</h1>
+    <h1 class="text-danger">Logout completo</h1>
     <a href="index.php" ><button onclick="logout()">Inicio</button></a>
 </div>
 

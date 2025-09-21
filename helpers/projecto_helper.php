@@ -1,5 +1,12 @@
 <?php 
 
+
+// function getProjectos(){
+//   $resultado = selectSql("SELECT * FROM projectos");
+//   return $resultado;
+
+// }
+
 function getProjectosDropdown(){
   $resultado = selectSql("SELECT id, nome FROM projectos");
   return $resultado;

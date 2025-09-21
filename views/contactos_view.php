@@ -46,7 +46,8 @@ if($form){
 
     <div class="row title mb-4 ps-1">
       <div class="col-3">
-        <h1><span>Con</span>tactos</h1>
+        <h1>Contactos</h1>
+        <div class="red-separator"></div>
       </div>
       <div class="col-4">
         <div>

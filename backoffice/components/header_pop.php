@@ -29,6 +29,10 @@ $usuario = verificarLogado();
 
   <link rel="stylesheet" href="public/css/style.css">
 
+  
+  <!-- TINYMCE -->
+  <script src="../public/js/tinymce/tinymce.min.js" defer></script>
+  <script src="../public/js/difere.js" defer></script>
 
   <!-- JAVASCRIPT -->
   <script src="../public/js/functions.js" defer></script>
@@ -38,7 +42,7 @@ $usuario = verificarLogado();
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
-<body>
+<body style="min-width: 850px; background-color: white;">
   <header class="container-fluid">
 
   </header>

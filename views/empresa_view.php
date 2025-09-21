@@ -17,6 +17,7 @@ if($form){
     <div class="row title mb-4 ps-1">
       <div class="col-6">
         <h1><?= $ee["titulo"] ?></h1>
+        <div class="red-separator"></div>
       </div>
     </div>
 
@@ -26,25 +27,7 @@ if($form){
         <?= $ee["texto"] ?>
       </div>
     </div>
-    <div class="row mb-4 px-5">
-      <div class="col-1"></div>
-      <div class="col-12 px-5 text-justify">
-        <?= $ee["texto"] ?>
-      </div>
-    </div>
-    <div class="row mb-4 px-5">
-      <div class="col-1"></div>
-      <div class="col-12 px-5 text-justify">
-        <?= $ee["texto"] ?>
-      </div>
-    </div>
-    <div class="row mb-5 px-5">
-      <div class="col-1"></div>
-      <div class="col-12 px-5 mb-5 text-justify">
-        <?= $ee["texto"] ?>
-      </div>
-    </div>
-
+   
 
   </main>
 

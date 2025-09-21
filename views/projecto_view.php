@@ -8,7 +8,6 @@ if($form){
 
   }
 
-  print_r($pe);
 
 ?>
 
@@ -22,6 +21,7 @@ if($form){
       <div class="col-12 mb-5">
         <h1>
           Projectos em Comercialização
+          <div class="red-separator-c"></div>
           <br>
           <?= $pe["nome"] ?>
         </h1>
@@ -41,7 +41,7 @@ if($form){
 
         
           <div class="project" style="background-image: url('<?= $imagens[0] ?>');">
-            <div><h3><?= $p["nome"] ?></h3></div>
+            <div><h3><?= $pe["nome"] ?></h3></div>
               <div class="see-more">
                 <a href="predio.php?id=<?= $p["id"] ?>">
                   <button>Ver Mais</button>
@@ -63,7 +63,7 @@ if($form){
         <a href="acabamentos.php?id=<?= $pe["id"] ?>">
           <div id="acabamentos"></div>
         </a>
-        <a href="plantas.php">
+        <a href="plantas.php?id=<?= $pe["id"] ?>">
           <div id="plantas"></div>
         </a>
       </div>

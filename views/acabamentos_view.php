@@ -5,6 +5,7 @@
   if($form){
     $id = intval($_GET["id"]);
     $pe = getProjetoEspecifico($id);
+    
   }
 
 
@@ -17,7 +18,8 @@
 
     <div class="row title mb-4 ps-1">
       <div class="col-12">
-        <h1><span>Aca</span>bamentos - (<?= $pe["nome"] ?>) </h1>
+        <h1>Acabamentos - (<?= $pe["nome"] ?>) </h1>
+        <div class="red-separator"></div>
       </div>
     </div>
 
@@ -27,12 +29,7 @@
         <?= $pe["acabamentos"] ?>
       </div>
     </div>
-    <div class="row mb-5 px-5">
-      <div class="col-1"></div>
-      <div class="col-12 px-5 mb-5 text-justify">
-        <?= $pe["acabamentos"] ?>
-      </div>
-    </div>
+
 
 
   </main>

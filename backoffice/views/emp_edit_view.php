@@ -1,10 +1,23 @@
 <?php 
-require_once "requirements.php";
-
-$e = getEmpresaEspecifica($editar_emp);
 
 
+  $editar_emp= (!empty($_GET["editar_emp"])) ? ($_GET["editar_emp"]) : 0;
 
+  $verf = !empty($_GET["titulo_emp"]) && !empty($_GET["texto_emp"]);
+  if($verf){
+    $editar_emp = $_GET["editar_emp"];
+    $titulo_emp = $_GET["titulo_emp"];
+    $texto_emp = $_GET["texto_emp"];
+    
+    iduSql("UPDATE empresa SET titulo='$titulo_emp', texto='$texto_emp' WHERE id=$editar_emp");
+
+  }
+  
+  
+  
+  $e = getEmpresaEspecifica($editar_emp); 
+  
+  
 ?>
 
 
@@ -27,15 +40,18 @@ $e = getEmpresaEspecifica($editar_emp);
       >
         <form action="" onsubmit="operacaoConcluida()">
 
-          <input type="hidden" name="$editar_emp" value="<?= $editar_emp ?>">
 
-            <a href="#" onclick="fecharPopup()">FECHAR</a>
-      
-            <input type="text" name="titulo_emp" placeholder="Título" value="<?= $e["titulo"] ?>">
-            <br><br>
+          <input type="hidden" name="editar_emp" value="<?= $editar_emp ?>">
 
-            <textarea name="texto_emp" placeholder="texto"><?= $e["texto"] ?></textarea>
-            
+
+
+          <a href="#" onclick="fecharPopup()">FECHAR</a>
+    
+          <input type="text" name="titulo_emp" placeholder="Título" value="<?= $e["titulo"] ?>">
+          <br><br>
+
+          <textarea name="texto_emp" placeholder="texto"><?= $e["texto"] ?></textarea>
+          
           </div>
           
           
@@ -45,7 +61,7 @@ $e = getEmpresaEspecifica($editar_emp);
           <br><br>
           <input type="submit" value="Guardar" class="w-25 m-auto mt-5">
           <br>
-          <button onclick="fecharPopup()" class="m-auto">Cancelar</button>
+          <button type="button" onclick="fecharPopup()" class="m-auto">Cancelar</button>
         </form>
 
       </div>
