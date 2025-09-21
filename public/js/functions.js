@@ -5,13 +5,13 @@ function loading(){
 
 }
 
-
 window.addEventListener('load',()=>{
   body.style.opacity = '0';
   setTimeout(() => {
     loading();
   }, 0)
 })
+
 
 
 function abrirPopupGestor(id){
@@ -62,13 +62,5 @@ function scrollAutomatico(){
   document.querySelector("main").scrollIntoView();
 }
 
-function verificar_scroll(){
-  if(menu_atual != "home"){scroll_automatico();}
-}
 
 
-function abrir_menu_delay(){
-  setTimeout(function(){menu_projetos.click();}, 750)
-}
-
-window.addEventListener("load", verificar_scroll);

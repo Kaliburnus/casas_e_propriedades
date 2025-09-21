@@ -42,29 +42,29 @@
         box
         "
       >
-      <button onclick="abrirPopup('pro_new.php')">Novo</button>
-      <table class="text-center m-auto mt-4">
-        <thead></thead>
-        <tr>
-          <th><input type="checkbox"></th>
-          <th>ID</th>
-          <th>nome_projecto</th>
-          <th>acabamentos</th>
-          <th>AÇÕES</th>
-     
-        </tr>
-        <tr>
-          <td><input type="checkbox"></td>
-          <td><?= $proj["id"] ?></td>
-          <td><?= $proj["nome"] ?></td>
-          <td><?=  substr(strip_tags($proj["acabamentos"]), 0, 100)?> ... </td>
-          <td>
-            <button onclick="abrirPopupId(<?= $proj['id'] ?>, 'pro_edit.php?editar_pro')">Editar</button>
+        <button onclick="abrirPopup('pro_new.php')">Novo</button>
+        <table class="text-center m-auto mt-4">
+          <thead></thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th>ID</th>
+            <th>nome_projecto</th>
+            <th>acabamentos</th>
+            <th>AÇÕES</th>
+      
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><?= $proj["id"] ?></td>
+            <td><?= $proj["nome"] ?></td>
+            <td><?=  substr(strip_tags($proj["acabamentos"]), 0, 100)?> ... </td>
+            <td>
+              <button onclick="abrirPopupId(<?= $proj['id'] ?>, 'pro_edit.php?editar_pro')">Editar</button>
 
-            <button onclick="confirmacao('projecto.php?excluir_pro=',<?= $proj['id'] ?>)">Excluir</button>
-        </td>
-        </tr>
-      </table>
+              <button onclick="confirmacao('projecto.php?excluir_pro=',<?= $proj['id'] ?>)">Excluir</button>
+          </td>
+          </tr>
+        </table>
 
       </div>
     </div>

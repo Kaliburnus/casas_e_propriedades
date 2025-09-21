@@ -22,6 +22,9 @@ require_once "../helpers/predio_helper.php";
 // CONTACTOS
 require_once "../helpers/contactos_helper.php";
 
+// PORTFOLIO
+require_once "../helpers/portfolio_helper.php";
+
 
 
 

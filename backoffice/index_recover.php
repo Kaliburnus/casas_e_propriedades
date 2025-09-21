@@ -1,18 +1,13 @@
 <?php 
 require_once "requirements.php";
 
-$form = !empty($_POST["login"]) && !empty($_POST["senha"]);
+$form = !empty($_POST["email"]);
 if($form){
-  $login = $_POST["login"];
-  $senha = $_POST["senha"];
-  if(fazerLogin($login, $senha)){
-    header("Location: home.php");
-  }
-
-
+  $email = $_POST["email"];
   
-  $usuario = $_SESSION["usuario"];
-  print_r($usuario);
+
+
+ 
 
 }
 
@@ -78,15 +73,12 @@ if($form){
         "
       >
         <form action="" method="post" autocomplete="off">
-          <input type="text" name="login" placeholder="login">
-          <br>
-          <input type="password" name="senha" placeholder="senha">
-          
+          <input type="email" name="email" placeholder="Email">
           <br><br>
-          <input type="submit" value="ENTRAR" class="btn btn-danger">
+          <input type="submit" value="ENVIAR" class="btn btn-danger">
           <br>
 
-          <a href="recover.php">Recuperar Senha</a>
+          <a href="index.php">Voltar</a>
         </form>
 
 

@@ -137,7 +137,7 @@ require_once "required.php";
                   <a class="nav-link <?= ($current_menu == "home") ? "active" : "" ?>" aria-current="page" href="index.php">HOME</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link <?= ($current_menu == "empresa") ? "active" : "" ?> dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link <?= ($current_menu == "empresa") ? "active" : "" ?> dropdown-toggle" id="empresa" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     EMPRESA
                   </a>
                   <ul class="dropdown-menu">

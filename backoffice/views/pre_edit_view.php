@@ -11,13 +11,13 @@ if($verf){
     
     iduSql("UPDATE predios SET tipo='$tipo_pre', id_projecto='$proj_pai', imagens='$imagens_pre', mostrar='$mostrar_pre' WHERE id=$editar_pre");
 }
-else{
-    echo "proj_pai: " . $_GET["proj_pai"] . "<br>";
-    echo "Tipo_pre: " . $_GET["tipo_pre"] . "<br>";
-    echo "Imagens_pre: " . $_GET["imagens_pre"] . "<br>";
-    echo "Mostrar_pre: " . $_GET["mostrar_pre"] . "<br>";
+// else{
+//     echo "proj_pai: " . $_GET["proj_pai"] . "<br>";
+//     echo "Tipo_pre: " . $_GET["tipo_pre"] . "<br>";
+//     echo "Imagens_pre: " . $_GET["imagens_pre"] . "<br>";
+//     echo "Mostrar_pre: " . $_GET["mostrar_pre"] . "<br>";
     
-}
+// }
 if ($editar_pre > 0) {
   $pred = getPredioEspecifico($editar_pre);
   $projectos = getProjectosDropdown();
@@ -29,7 +29,7 @@ if ($editar_pre > 0) {
         <div class="col-12 text-center w-100 m-auto rounded-4 box mt-5">
             <form action="" onsubmit="operacaoConcluida()">
 
-            <input type="hidden" name="editar_pre" value="<?= $editar_pre ?>">
+                <input type="hidden" name="editar_pre" value="<?= $editar_pre ?>">
 
                 <a href="#" onclick="fecharPopup()">FECHAR</a>
         
@@ -64,12 +64,11 @@ if ($editar_pre > 0) {
 
                 </select>
                 
-                
-            </div>
+         
             
             
             
-            
+            </form>
         
             <br><br>
             <input type="submit" value="Guardar" class="w-25 m-auto mt-5">

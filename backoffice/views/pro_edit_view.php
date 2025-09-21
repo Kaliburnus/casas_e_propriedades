@@ -26,9 +26,9 @@ foreach($pred as $i => $p){
         $tipo_pro = $_GET["tipo_pro".$i];
         $area_pro = intval($_GET["area_pro".$i]);
         $estado_pro = $_GET["estado_pro".$i];
-        $valor_pro = floatval($_GET["valor_pro$i"]);
+        $valor_pro= floatval($_GET["valor_pro$i"]);
         
-        iduSql("UPDATE predios SET tipo='$tipo_pro', area=$area_pro, estado='$estado_pro', valor=$valor_pro WHERE id_projecto=$editar_pro");
+        iduSql("UPDATE predios SET tipo='$tipo_pro', area=$area_pro, estado='$estado_pro', valor=$valor_pro WHERE id={$p['id']}");
 
     }
 

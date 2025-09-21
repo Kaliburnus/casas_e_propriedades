@@ -21,8 +21,6 @@ if($verf){
 
                 <a href="#" onclick="fecharPopup()">FECHAR</a>
         
-
-                
                 <br>
                 <input type="text" name="novo_imagens_pre" placeholder="Imagem" required readonly id="imagens">
                 <button type="button" class="btn btn-danger" onclick="abrirPopupGestor('imagens')">Ficheiros</button>

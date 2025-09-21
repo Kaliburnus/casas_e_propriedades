@@ -13,6 +13,12 @@ function getPortEspecifico($id){
 
 }
 
+function getPortfolio(){
+  $resultado = selectSql("SELECT * FROM portfolio");
+  return $resultado;
+
+}
+
 
 
 

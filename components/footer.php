@@ -10,7 +10,7 @@
           <a href="#" class="<?= ($current_menu == "home") ? "activated" : "" ?>">
             HOME
           </a>
-          <a href="#" class="<?= ($current_menu == "empresa") ? "activated" : "" ?>">
+          <a href="#" onclick="abrir_com_delay('empresa')" class="<?= ($current_menu == "empresa") ? "activated" : "" ?>">
             EMPRESA
           </a>
           <a href="#" class="<?= ($current_menu == "projectos") ? "activated" : "" ?>">

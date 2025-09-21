@@ -30,7 +30,7 @@ table, tr, td, th{
   border-collapse: collapse;
   padding: 5px 10px;
 }
-table{width: 700px;}
+table{width: 600px;}
 td{width: fit-content;}
 tr:hover{background-color: rgba(255, 0, 0, 0.73);}
 td:hover{background-color: rgba(79, 66, 255, 0.73);}
